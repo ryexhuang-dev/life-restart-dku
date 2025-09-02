@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
+
+  
   <h1>Life Restart – Duke Kunshan University</h1>
   <div id="screen"></div>
     <div id="stats" class="mb-4">
@@ -35,7 +37,17 @@
 
 <script>
 
-
+#screen {
+    background: rgba(0,0,50,0.7);
+    border: 2px solid #00ccff;
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 700px;
+    width: 90%;
+    box-shadow: 0 0 15px #00ccff, 0 0 30px #ffcc00;
+    margin-bottom: 30px;
+}
+  
    function updateStats() {
       document.getElementById("stat-int").style.width = state.int + "%";
       document.getElementById("stat-health").style.width = state.health + "%";
@@ -64,6 +76,34 @@
       updateStats();
       screen.innerHTML = html;
     }
+
+
+button {
+    background: linear-gradient(145deg, #004080, #0066cc);
+    border: 2px solid #ffd700;  /* 金色边框 */
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    box-shadow: 0 0 12px #ffd700, 0 0 24px #ffcc00; /* 发光效果 */
+    transform: scale(1.05); /* 放大动画 */
+    cursor: pointer;
+}
+button:hover {
+    box-shadow: 0 0 12px #ffd700, 0 0 24px #ffcc00;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 8px #ffcc00 inset;
+}
+  
 
 let state = { int:50, health:100, happy:50, events:[], step:'intro' };
 const screen = document.getElementById('screen');
@@ -156,6 +196,7 @@ render(EVENTS.intro);
 </body>
 
 </html>
+
 
 
 
