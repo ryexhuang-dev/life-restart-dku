@@ -1,37 +1,58 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f7f7f7;
-  margin: 0;
-  padding: 20px;
-}
-h1, h2, h3 {
+  background: 
+    linear-gradient(rgba(0, 0, 50, 0.4), rgba(0, 0, 50, 0.4)), 
+    url("https://dukekunshan.edu.cn/sites/default/files/styles/hero_xl/public/2021-09/DKU-Campus-View.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
+
+
+
+h1 {
+  background: rgba(0, 0, 60, 0.6);
+  color: #fff;
+  padding: 20px;
+  margin: 0;
+  font-size: 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
 #screen {
   max-width: 600px;
-  margin: auto;
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  color: #222;
 }
+
 button {
   display: block;
-  width: 100%;
-  margin: 10px 0;
-  padding: 12px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 6px;
-  background: #0077ff;
-  color: #fff;
+  width: 80%;
+  margin: 12px auto;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #0066ff, #003d99);
+  color: white;
+  border: 2px solid #002b66;
+  border-radius: 12px;
   cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
 }
+
 button:hover {
-  background: #005fcc;
+  background: linear-gradient(135deg, #3399ff, #0055cc);
+  transform: scale(1.05);
 }
-hr {
-  border: none;
-  border-top: 1px solid #ddd;
+
+
   margin: 20px 0;
+
 }
