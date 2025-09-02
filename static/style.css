@@ -53,12 +53,6 @@ button:hover {
 }
 
 
-  margin: 20px 0;
-
-}
-
-
-/* 状态条通用 */
 .status-bar {
   margin: 12px 0;
   text-align: left;
@@ -95,4 +89,5 @@ button:hover {
 .fill.happy {
   background: linear-gradient(90deg, #ffcc33, #ff9900);
 }
+
 
