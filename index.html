@@ -34,6 +34,37 @@
 
 
 <script>
+
+
+   function updateStats() {
+      document.getElementById("stat-int").style.width = state.int + "%";
+      document.getElementById("stat-health").style.width = state.health + "%";
+      document.getElementById("stat-happy").style.width = state.happy + "%";
+    }
+
+    function render(node) {
+      if (node.ending) {
+        screen.innerHTML = `
+          <h2 class="animate__animated animate__bounceIn">${node.ending}</h2>
+          <button onclick="location.reload()">Restart</button>`;
+        return;
+      }
+      let html = `<h3>${node.text}</h3>`;
+      if (node.options) {
+        node.options.forEach(opt => {
+          html += `<button onclick="choose('${opt.goto}')">${opt.text}</button>`;
+        });
+      }
+      if (node.effect) {
+        applyEffect(node.effect);
+        updateStats();
+        setTimeout(() => render(EVENTS[node.goto]), 600);
+        return;
+      }
+      updateStats();
+      screen.innerHTML = html;
+    }
+
 let state = { int:50, health:100, happy:50, events:[], step:'intro' };
 const screen = document.getElementById('screen');
 
@@ -125,6 +156,7 @@ render(EVENTS.intro);
 </body>
 
 </html>
+
 
 
 
