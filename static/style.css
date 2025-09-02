@@ -1,37 +1,49 @@
+/* ===== 全局基础 ===== */
 body {
   font-family: Arial, sans-serif;
-  background: 
-    linear-gradient(rgba(0, 0, 50, 0.4), rgba(0, 0, 50, 0.4)), 
+  background:
+    linear-gradient(rgba(0, 0, 50, 0.45), rgba(0, 0, 50, 0.45)),
     url("https://dukekunshan.edu.cn/sites/default/files/styles/hero_xl/public/2021-09/DKU-Campus-View.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: #fff;
   text-align: center;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-
-
+/* ===== 标题 ===== */
 h1 {
-  background: rgba(0, 0, 60, 0.6);
+  background: rgba(0, 0, 60, 0.65);
   color: #fff;
-  padding: 20px;
+  padding: 20px 0;
   margin: 0;
-  font-size: 28px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  font-size: 32px;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
 }
 
+/* ===== 主内容区 ===== */
 #screen {
-  max-width: 600px;
+  max-width: 640px;
+  width: 90%;
   margin: 40px auto;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   color: #222;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
+/* ===== 按钮 ===== */
 button {
   display: block;
   width: 80%;
@@ -39,55 +51,51 @@ button {
   padding: 14px;
   font-size: 18px;
   font-weight: bold;
+  font-family: 'Orbitron', Arial, sans-serif;
   background: linear-gradient(135deg, #0066ff, #003d99);
-  color: white;
+  color: #fff;
   border: 2px solid #002b66;
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
+  transition: all 0.3s ease;
 }
 
 button:hover {
   background: linear-gradient(135deg, #3399ff, #0055cc);
   transform: scale(1.05);
+  box-shadow: 0 0 12px #3399ff;
 }
 
+button:active {
+  transform: scale(0.96);
+}
 
-.status-bar {
-  margin: 12px 0;
+/* ===== 进度条 ===== */
+#stats {
+  max-width: 640px;
+  width: 90%;
+  margin: 0 auto 25px auto;
   text-align: left;
-  font-weight: bold;
   color: #222;
 }
 
-.status-bar label {
-  display: block;
-  margin-bottom: 4px;
+.stat {
+  margin-bottom: 8px;
 }
 
-
-.bar {
-  width: 100%;
-  height: 18px;
+.progress {
+  height: 20px;
+  border-radius: 10px;
   background: #ddd;
-  border-radius: 8px;
   overflow: hidden;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-
-.fill {
-  height: 100%;
-  background: linear-gradient(90deg, #3399ff, #0066cc);
+.progress-bar {
   transition: width 0.5s ease;
 }
 
-.fill.health {
-  background: linear-gradient(90deg, #ff6666, #cc0000);
-}
-
-.fill.happy {
-  background: linear-gradient(90deg, #ffcc33, #ff9900);
-}
-
-
+/* 三条进度条颜色 */
+.bg-info      { background: linear-gradient(90deg, #3399ff, #0066cc); }
+.bg-danger    { background: linear-gradient(90deg, #ff6666, #cc0000); }
+.bg-success   { background: linear-gradient(90deg, #ffcc33, #ff9900); }
